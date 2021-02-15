@@ -20,16 +20,18 @@ body {
 }
 
 .resumee-container {
+    text-align: left;
     margin-top: 30px;
+    margin-bottom: 30px;
     max-width: 850px;
     -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.07);
     box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.07);
-    margin-bottom: 30px;
+    display: inline-table;
 }
 
 .headline {
-    top: 100px;
-    left: 300px;
+    top: 150px;
+    left: 530px;
     position: absolute;
     font-weight: bold;
     color: #fff;
@@ -66,8 +68,17 @@ ul {
     padding-left: 15px;
 }
 
+.footer {
+    height: 50px;
+    position: absolute;
+    background-color: blue;
+    bottom: 0px;
+}
+
 @media (max-width: 479px) {
     .resumee-container {
+        margin-top: 20px;
+        margin-bottom: 20px;
         margin-left: 15px;
     }
 
