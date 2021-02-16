@@ -15,8 +15,9 @@ body {
         Segoe UI Emoji,
         Segoe UI Symbol,
         Noto Color Emoji !important;
-    color: #212529;
+    color: #dfdfdf;
     font-size: .8rem;
+    background: #191919;
 }
 
 .resumee-container {
@@ -44,20 +45,33 @@ body {
 .resumme-header {
     height: 270px;
     background-color: rgb(0, 162, 255);
+    border-radius: 5px 5px 0 0;
 }
 
 .resumee-photo {
+    border-radius: 5px;
     height: 300px;
+    box-shadow: 0px 4px 18px 14px rgb(0 162 255 / 28%);
 }
 
 .resumme-body {
     padding: 10px 50px;
     padding-bottom: 50px;
+    border-radius: 0 0 5px 5px;
+    background: #272727;
 }
 
 h5,
 h6 {
     text-transform: uppercase;
+}
+
+h5 {
+  color: #00a2ff;  
+}
+
+h6 {
+  color: #8dd5ff;
 }
 
 .company-year {
