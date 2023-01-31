@@ -34,7 +34,7 @@ body {
 
 .headline {
     top: 150px;
-    left: 530px;
+    margin-left: 530px;
     position: absolute;
     font-weight: bold;
     color: #fff;
@@ -106,7 +106,8 @@ ul {
     }
 
     .headline {
-        left: 270px;
+        top: 35px;
+        margin-left: 27px;
     }
 
     .second-column {
