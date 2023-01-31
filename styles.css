@@ -30,6 +30,7 @@ body {
     display: inline-table;
     background: #272727;
     border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
 }
 
 .headline {
@@ -37,7 +38,7 @@ body {
     margin-left: 530px;
     position: absolute;
     font-weight: bold;
-    color: #fff;
+    color: #272727;
 }
 
 .first-column {
@@ -101,13 +102,19 @@ ul {
         margin-left: 15px;
     }
 
+    .resumee-photo {
+        padding-top: 20px;
+        border-radius: 5px;
+        height: 275px;
+    }
+
     .resumme-body {
         padding: 10px 10px;
     }
 
     .headline {
-        top: 35px;
-        margin-left: 27px;
+        top: 45px;
+        margin-left: 13px;
     }
 
     .second-column {
