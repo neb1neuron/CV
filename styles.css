@@ -53,8 +53,9 @@ body {
 }
 
 .resumee-photo {
-    border-radius: 5px;
+    border-radius: 150px;
     height: 300px;
+    border: 25px solid #e0b836;
 }
 
 .resumme-body {
@@ -104,8 +105,7 @@ ul {
 
     .resumee-photo {
         padding-top: 20px;
-        border-radius: 5px;
-        height: 275px;
+        height: 305px;
     }
 
     .resumme-body {
@@ -127,5 +127,9 @@ ul {
 
     .headline h4 {
         font-size: 1.5rem;
+    }
+
+    .photo-wrapper{
+        text-align: center;
     }
 }
