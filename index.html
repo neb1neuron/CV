@@ -8,6 +8,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <title>Feder Catalin Andrei Resumee</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
@@ -16,6 +17,8 @@
           href="styles.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -87,11 +90,12 @@
                     </ul>
 
                 </div>
-                <div class="col-sm-12 col-lg-8 second-column">
+                <div id="work-experience"
+                     class="col-sm-12 col-lg-8 second-column">
                     <hr>
                     <h5>Work experience</h5>
 
-                    <h6>Bioinformatics Engineering Manager</h6>
+                    <!-- <h6>Bioinformatics Engineering Manager</h6>
                     <h6>Senior Software engineer</h6>
 
                     <div class="company-year">Qiagen 2020-2023</div>
@@ -176,7 +180,56 @@
                         <li>
                             Gathering requirement from the client in their native language which was Italian
                         </li>
-                    </ul>
+                    </ul> -->
+
+                    <template>
+                        <div class="work-experience"
+                             id="app">
+                            <div class="company-wrapper"
+                                 @click="toggle($event,item)"
+                                 v-for="item in resumeData">
+                                <div>
+                                    <div class="role"
+                                         v-for="role in item['Role']">
+                                        {{role}}
+                                    </div>
+                                </div>
+                                <div class="company"><i class="bi bi-building"></i> {{item["Company"]}} </div>
+                                <div class="period"><i class="bi bi-calendar"></i> {{item["Period"]}} </div>
+                                <div class="skills"><i class="bi bi-sliders"></i> {{item["Technology Stack"]}}</div>
+                                <div class="w-100 text-center toggle">
+                                    <i class="bi bi-chevron-compact-down"></i>
+                                </div>
+                                <div class="projects-wrapper"
+                                     v-bind:class="{'expanded':item.expanded}">
+                                    <div class="projects"> Projects </div>
+                                    <div class="project"
+                                         v-for="project in item['Projects']">
+                                        <div class="project-name"> Name: {{project["Name"]}} </div>
+                                        <div class="project-context"><strong>Context:</strong> {{project['Context']}}
+                                        </div>
+                                        <div class="skills"> {{project["Technology Stack"]}}</div>
+
+                                        <div class="tasks"> Tasks/Experience: </div>
+                                        <ul>
+                                            <li class="task"
+                                                v-for="task in project['Tasks/Experience']">
+                                                {{task}}
+                                            </li>
+                                        </ul>
+
+                                        <div class="achievements"> Achievements: </div>
+                                        <ul>
+                                            <li class="achievement"
+                                                v-for="achievement in project['Achievements']">
+                                                {{achievement}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
 
                     <hr>
                     <h5>Open source:</h5>
@@ -203,6 +256,184 @@
             <br>
         </div>
     </div>
+
+    <script>
+        new Vue({
+            el: "#work-experience",
+            data: {
+                resumeData: [
+                    {
+                        "Company": "Qiagen",
+                        "Period": "09/2020 – 12/2022",
+                        "Role": [
+                            "Senior Software Engineer - Full Stack",
+                            "Bioinformatics Engineering Manager"
+                        ],
+                        "Technology Stack": ".Net Core 5/6, Angular 13/14, Bootstrap, MySQL, PostgreSQL, AWS",
+                        "Projects": [
+                            {
+                                "Name": "Array Curator – internal curation tool",
+                                "Context": "Rewrite a desktop application as a web application. Work with multiple stakeholders in rethinking and improving existing workflows but also create a lot of new features. Team of 4(3 developers, one tester) working with Agile Methodology based on Scrum.",
+                                "Technology stack": ".Net Core 5, Angular 13, Bootstrap, MySQL, AWS",
+                                "Tasks/Experience": [
+                                    "Full stack development",
+                                    "Product owner: Create specifications with the stakeholders and refine them with the team",
+                                    "Create and maintain the software architecture",
+                                    "Mentoring and coaching the team"
+                                ],
+                                "Achievements": [
+                                    "Manage to release the application that contained all the existing features and a lot of extra functionality in a year and a half with a team of 3 developers (me included) and a tester",
+                                    "There were no blocking defects on the beta testing period",
+                                    "Promoted to Bioinformatics Engineering Manager during the project",
+                                    "Managed to receive bonuses for the whole team because of the success of the project"
+                                ]
+                            },
+                            {
+                                "Name": "CERT (Content Evaluation and Review Tool)",
+                                "Context": "Design and implement the MVP based on the stakeholder’s needs. Team of 4(3 developers, one tester) working with Agile Methodology based on Scrum.",
+                                "Technology stack": ".Net 6, Angular 14, Bootstrap, PostgreSQL deployed on premise.",
+                                "Tasks/Experience": [
+                                    "Full stack development",
+                                    "Product owner: Create specifications with the stakeholders and refine them with the team",
+                                    "Create and maintain the software architecture",
+                                    "Mentoring and coaching the team"
+                                ],
+                                "Achievements": [
+                                    "Manage to deliver the MVP ahead of the deadline",
+                                    "Keep the team motivated and happy",
+                                    "Won a hackathon contest in the company with 2 colleagues from other teams. The project has a great potential to increase the company revenue by bringing more clients. The project was given to another team to develop, and I continued to help them in the development process",
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Company": "Globant",
+                        "Period": "05/2017 – 08/2020",
+                        "Role": [
+                            "Senior Software Engineer - Full Stack"
+                        ],
+                        "Technology Stack": ".Net Core 3, Angular 2+, ASP.NET MVC, Windows Services, jQuery, ASP.NET CORE WEB API, REST API, HTML, CSS, SCSS",
+                        "Projects": [
+                            {
+                                "Name": "Fleet Portal",
+                                "Context": "Create an application for managing a fleets of trucks all over US for an important player in the fuel delivery industry",
+                                "Technology stack": "ASP.NET MVC, Windows Services, jQuery, SQL, HTML, CSS",
+                                "Tasks/Experience": [
+                                    "Full stack development",
+                                    "Create and maintain the software architecture",
+                                    "Work directly with the stakeholders to create tasks that meet their needs"
+                                ],
+                                "Achievements": [
+                                    "Successfully worked and delivered on two projects.",
+                                    "Fully responsible for this project since I was the only developer on it.",
+                                    "Managed to convince the client to rewrite an ASP .NET monolith to a .NET Core + Angular 2+ solution by making a working proof of concept. "
+                                ]
+                            },
+                            {
+                                "Name": "Management Portal",
+                                "Context": "Create a business rich application from scratch for the company back-office.",
+                                "Technology stack": ".Net Core 3, REST API, Angular 2+, SQL, HTML, CSS",
+                                "Tasks/Experience": [
+                                    "Full stack development",
+                                    "Create and maintain the software architecture",
+                                    "Work directly with the stakeholders to create tasks that meet their needs"
+                                ],
+                                "Achievements": [
+                                    "Successfully worked and delivered on two projects.",
+                                    "Learned Angular 2+ and managed to create a fast and reliable application.",
+                                    "Created an application that is monitoring all the deployment servers and can start services and stop them. We managed to sell the idea to the client, and this brought new people on the project."
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Company": "Fortech",
+                        "Period": "06/2015 – 05/2017",
+                        "Role": [
+                            "Software Engineer - Full Stack"
+                        ],
+                        "Technology Stack": ".ASP .NET Web API, ASP.NET MVC, Windows Services, Windows Forms, jQuery, Knockout, HTML, CSS, SCSS.",
+                        "Projects": [
+                            {
+                                "Name": "Multiple projects",
+                                "Context": "I came to Fortech working on a big initiative to rewrite a retail solution that was used by the leading grocery retailers in the US. It was a big project counting approximately 200 people. We used Agile Methodology based on Scrum.",
+                                "Technology stack": ".ASP .NET Web API, ASP.NET MVC, Windows Services, Windows Forms, jQuery, Knockout, HTML, CSS, SCSS",
+                                "Tasks/Experience": [
+                                    "Full stack development, also introduction to bash scripting",
+                                    "Brainstorm ideas, codding, respect code guidelines, unit tests",
+                                    "Work directly with the stakeholders to create tasks that meet their needs"
+                                ],
+                                "Achievements": [
+                                    "Manage start from scratch and deliver an important service that is integrated with physical hardware. This project was started by 2 other teams with no success.",
+                                    "After the rewrite, where I was doing backend and frontend tasks, I was placed in a team that was in charge only of a big backend service. We would finish the sprint early and I would get to help other teams with frontend tasks",
+                                    "I was able to create a bash script that was doing an important job regarding the application data. This was my first time working with bash scripting and I had very little support",
+                                    "I also maintained a legacy desktop application (Windows Forms) since I was the only one with experience on this technology"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Company": "Accenture (Evoline)",
+                        "Period": "10/2012 – 06/2015",
+                        "Role": [
+                            "Software Developer - Full Stack"
+                        ],
+                        "Technology Stack": "Windows Forms, WPF, .ASP .NET Web Forms, ASP.NET MVC, Sitecore, BDD-Speckflow, Windows Services, Windows Workflow Foundation, jQuery, HTML, CSS",
+                        "Projects": [
+                            {
+                                "Name": "Multiple projects",
+                                "Context": "I started working on betting industry applications Later on the whole team moved to banking solutions. We used Agile Methodology based on Scrum. ",
+                                "Technology stack": "Windows Forms, WPF, .ASP .NET Web Forms, ASP.NET MVC, Sitecore, Windows Services, Windows Workflow Foundation, jQuery, HTML, CSS.",
+                                "Tasks/Experience": [
+                                    "Full stack development desktop and web",
+                                    "Brainstorm ideas, codding, respect code guidelines, unit tests with high code coverage",
+                                    "Work directly with the stakeholders to create tasks that meet their needs"
+                                ],
+                                "Achievements": [
+                                    "Was the first candidate to be selected to work on this project at the end of a learning and testing initiative of the client. There were 15 candidates and the initiative took 5 weeks",
+                                    "Because this was the first time I was working in a bigger and more experienced team I tried to learn as much as I could from every team member. I became productive really quick on the project and my colleagues were appreciating my involvement and contributions to the project",
+                                    "I managed to switch fairly easily from one business area to another (Betting to Fintech) when we were moved to another project. Also, the technology stack was very diverse"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Company": "Recus Spa",
+                        "Period": "08/2011 – 10/2012",
+                        "Role": [
+                            "Junior Software Developer - full stack"
+                        ],
+                        "Technology Stack": "Windows Forms, Windows Services, ASP .NET MVC, Sencha Ext JS, JQuery, HTML, CSS",
+                        "Projects": [
+                            {
+                                "Name": "Multiple projects",
+                                "Context": "Development Context: I was working on applications and services in the Fintech and credit collection industry. We used Agile Methodology based on Scrum.",
+                                "Technology stack": "Windows Forms, Windows Services, ASP .NET MVC, Sencha Ext JS, JQuery, HTML, CSS",
+                                "Tasks/Experience": [
+                                    "Full stack development desktop and web",
+                                    "Brainstorm ideas, codding, respect code guidelines, unit tests with high code coverage",
+                                    "Work directly with the stakeholders to create tasks that meet their needs"
+                                ],
+                                "Achievements": [
+                                    "This was my first job and as a junior I was given a lot of responsibility like: production database read/write rights, deploy the applications, talk to the stakeholders that were italians",
+                                    "My first task was to create a service that was processing banking statements documents that were done manually by 10 people. I did this in 2 weeks and those 10 people were free to do more important work. This is when I first saw the power of automation and coding in a real time scenario",
+                                    "I also had to learn Italian in 6 months because the stakeholders were not speaking english. I managed to learn and talk directly to the stakeholders and create specifications based on their needs"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+            },
+            methods: {
+                toggle(event, item) {
+                    x = this.resumeData;
+                    x.find(i => i.Company === item.Company).expanded = !item.expanded;
+                    this.resumeData = [...x];
+                }
+            }
+        });
+    </script>
 </body>
+
 
 </html>

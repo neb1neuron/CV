@@ -98,6 +98,93 @@ ul {
     font-weight: normal;
 }
 
+.company-wrapper{
+    cursor: pointer;
+    user-select: none;
+    padding: 19px;
+    padding-bottom: 0;
+    border-radius: 10px;
+    background: #323232;
+    margin-bottom: 10px;
+}
+
+.role {
+    font-size: 1rem;
+    color: #e0b836;
+    font-weight: 500;
+    display: block;
+}
+
+.skills {
+    font-size: .9rem;
+}
+
+.period {
+    color: #8a8a8a;
+    font-size: .9rem;
+    display: block;
+}
+
+.company {
+    font-size: 1rem;
+    display: block;
+}
+
+.work-experience{
+}
+
+.work-experience .bi {
+    font-size: 1.2rem;
+    padding-right: 5px;
+}
+
+.projects{
+    color: #e0b836;
+    font-weight: bold;
+    margin-left: -15px;
+    margin-top:15px;
+}
+
+.projects-wrapper{
+    padding-left: 15px;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height .5s;
+    z-index: -9;
+    position: relative;
+}
+
+.project{
+    padding-bottom:15px;
+}
+
+.projects-wrapper ul{
+    margin-bottom: 3px;
+}
+
+.project-name{
+    padding-top: 5px;
+    font-weight: bold;
+}
+
+.tasks, .achievements{
+    font-weight: bold;
+}
+
+.toggle{
+   color: #8a8a8a;
+    -webkit-box-shadow: 0px 12px 11px -7px rgb(0 0 0 / 37%);
+    box-shadow: 0px 12px 11px -7px rgb(0 0 0 / 37%);
+}
+
+.expanded{
+    max-height: 1000px;
+    opacity: 1;
+    transition: max-height .5s;
+    transition: opacity 1s;
+    z-index: 0;
+}
+
 @media (max-width: 479px) {
     .resumee-container {
         margin-top: 20px;
