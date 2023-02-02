@@ -64,10 +64,22 @@ body {
     box-shadow: 0px 8px 14px 8px rgb(0 0 0 / 37%);
 }
 
+.photo-wrapper {
+    height: 300px;
+}
+
 .resumee-photo {
     border-radius: 150px;
     height: 300px;
     border: 25px solid var(--secondary-color);
+    background-image: url("resumee-photo.jpg");
+    background-color: var(--primary-color);
+    background-size: cover;
+    min-width: 235px;
+    width: fit-content;
+    background-repeat: no-repeat;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 }
 
 .resumme-body {
@@ -240,6 +252,7 @@ ul {
     }
 
     .photo-wrapper {
-        text-align: center;
+        display: flex;
+        justify-content: center;
     }
 }
