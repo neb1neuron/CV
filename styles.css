@@ -1,3 +1,11 @@
+:root {
+    --primary-color: #e0b836;
+    --secondary-color: #272727;
+    --background-color: #191919;
+    --text-color: #dfdfdf;
+    --grey-text: #969696;
+}
+
 html,
 body {
     height: 100%;
@@ -15,9 +23,9 @@ body {
         Segoe UI Emoji,
         Segoe UI Symbol,
         Noto Color Emoji !important;
-    color: #dfdfdf;
+    color: var(--text-color);
     font-size: .8rem;
-    background: #191919;
+    background: var(--background-color);
 }
 
 .resumee-container {
@@ -28,7 +36,7 @@ body {
     -webkit-box-shadow: 0px 8px 14px 8px rgb(0 0 0 / 10%);
     box-shadow: 0px 8px 14px 8px rgb(0 0 0 / 10%);
     display: inline-table;
-    background: #272727;
+    background: var(--secondary-color);
     border-bottom-right-radius: 50px;
     border-top-left-radius: 50px;
 }
@@ -38,7 +46,7 @@ body {
     margin-left: 530px;
     position: absolute;
     font-weight: bold;
-    color: #272727;
+    color: var(--secondary-color);
 }
 
 .first-column {
@@ -47,17 +55,19 @@ body {
 
 .resumme-header {
     height: 270px;
-    background-color: rgb(224 184 54);
+    background-color: var(--primary-color);
+    background-image: url("banner.svg");
+    background-repeat: no-repeat;
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
     -webkit-box-shadow: 0px 8px 14px 8px rgb(0 0 0 / 37%);
-        box-shadow: 0px 8px 14px 8px rgb(0 0 0 / 37%);
+    box-shadow: 0px 8px 14px 8px rgb(0 0 0 / 37%);
 }
 
 .resumee-photo {
     border-radius: 150px;
     height: 300px;
-    border: 25px solid #272727;
+    border: 25px solid var(--secondary-color);
 }
 
 .resumme-body {
@@ -66,17 +76,27 @@ body {
     border-radius: 0 0 5px 5px;
 }
 
-h5,
-h6 {
+.header-5 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.header-6 {
+    color: var(--grey-text);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 1rem;
+}
+
+.header-5, .header-6 {
     text-transform: uppercase;
-}
-
-h5 {
-  color: #e0b836;
-}
-
-h6 {
-  color: #969696;
 }
 
 .company-year {
@@ -87,18 +107,11 @@ ul {
     padding-left: 15px;
 }
 
-.footer {
-    height: 50px;
-    position: absolute;
-    background-color: blue;
-    bottom: 0px;
-}
-
-.normal-text{
+.normal-text {
     font-weight: normal;
 }
 
-.company-wrapper{
+.company-wrapper {
     cursor: pointer;
     user-select: none;
     padding: 19px;
@@ -110,7 +123,7 @@ ul {
 
 .role {
     font-size: 1rem;
-    color: #e0b836;
+    color: var(--primary-color);
     font-weight: 500;
     display: block;
 }
@@ -125,12 +138,16 @@ ul {
     display: block;
 }
 
+.years-of-experience {
+    color: #8a8a8a;
+    font-size: .9rem;
+    display: block;
+    cursor: pointer;
+}
+
 .company {
     font-size: 1rem;
     display: block;
-}
-
-.work-experience{
 }
 
 .work-experience .bi {
@@ -138,14 +155,14 @@ ul {
     padding-right: 5px;
 }
 
-.projects{
-    color: #e0b836;
+.projects {
+    color: var(--primary-color);
     font-weight: bold;
     margin-left: -15px;
-    margin-top:15px;
+    margin-top: 15px;
 }
 
-.projects-wrapper{
+.projects-wrapper {
     padding-left: 15px;
     max-height: 0;
     opacity: 0;
@@ -154,35 +171,39 @@ ul {
     position: relative;
 }
 
-.project{
-    padding-bottom:15px;
+.project {
+    padding-bottom: 15px;
 }
 
-.projects-wrapper ul{
+.projects-wrapper ul {
     margin-bottom: 3px;
 }
 
-.project-name{
+.project-name {
     padding-top: 5px;
     font-weight: bold;
 }
 
-.tasks, .achievements{
+.tasks, .achievements {
     font-weight: bold;
 }
 
-.toggle{
-   color: #8a8a8a;
+.toggle {
+    color: #8a8a8a;
     -webkit-box-shadow: 0px 12px 11px -7px rgb(0 0 0 / 37%);
     box-shadow: 0px 12px 11px -7px rgb(0 0 0 / 37%);
 }
 
-.expanded{
+.expanded {
     max-height: 1000px;
     opacity: 1;
     transition: max-height .5s;
     transition: opacity 1s;
     z-index: 0;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
 
 @media (max-width: 479px) {
@@ -218,7 +239,7 @@ ul {
         font-size: 1.5rem;
     }
 
-    .photo-wrapper{
+    .photo-wrapper {
         text-align: center;
     }
 }

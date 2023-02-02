@@ -1,23 +1,23 @@
 {
-        "Employer name": "",
-        "Period": "",
-        "Role": [
-            ""
-        ],
-        "Technology Stack": "",
-        "Projects": [
-            {
-                "Project": "",
-                "Development context": "",
-                "Technology stack": "",
-                "Tasks/Experience": [
-                    "",
-                    ""
-                ],
-                "Achievements": [
-                    "",
-                    ""
-                ]
-            }
-        ]
-    }
+    "Employer name": "",
+    "Period": "",
+    "Role": [
+        ""
+    ],
+    "Technology Stack": "",
+    "Projects": [
+        {
+            "Project": "",
+            "Development context": "",
+            "Technology stack": "",
+            "Tasks/Experience": [
+                "",
+                ""
+            ],
+            "Achievements": [
+                "",
+                ""
+            ]
+        }
+    ]
+}
