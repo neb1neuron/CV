@@ -230,6 +230,7 @@ ul {
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
     justify-items: center;
+    align-items: baseline;
 }
 
 .footer img {
