@@ -107,7 +107,8 @@ body {
     font-size: 1rem;
 }
 
-.header-5, .header-6 {
+.header-5,
+.header-6 {
     text-transform: uppercase;
 }
 
@@ -196,7 +197,12 @@ ul {
     font-weight: bold;
 }
 
-.tasks, .achievements {
+.project-context {
+    white-space: pre-line;
+}
+
+.tasks,
+.achievements {
     font-weight: bold;
 }
 
