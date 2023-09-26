@@ -82,7 +82,7 @@ body {
 }
 
 .resumee-image {
-    width: 85%;
+    height: 85%;
     border-radius: 150px;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
